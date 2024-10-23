@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Uygulaması</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="email"] {
+            padding: 10px;
+            width: 250px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 5px;
+        }
+        button.add {
+            background-color: #28a745;
+            color: white;
+        }
+        button.update {
+            background-color: #007bff;
+            color: white;
+            display: none;
+        }
+        button.cancel {
+            background-color: #dc3545;
+            color: white;
+            display: none;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .actions button {
+            padding: 5px 10px;
+            margin: 2px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .actions .edit {
+            background-color: #ffc107;
+            color: white;
+            border: none;
+        }
+        .actions .delete {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="form-container">
+        <input type="text" id="name" placeholder="İsim girin" />
+        <input type="email" id="email" placeholder="Email girin" />
+        <button class="add" onclick="addUser()">Kullanıcı Ekle</button>
+        <button class="update" id="updateBtn" onclick="updateUser()">Güncelle</button>
+        <button class="cancel" id="cancelBtn" onclick="cancelEdit()">İptal</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>İsim</th>
+                <th>Email</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody id="userTable"></tbody>
+    </table>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
